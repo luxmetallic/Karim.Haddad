@@ -84,25 +84,21 @@
   <script>
     function saveContact() {
       // Get the contact information
-      var name = "Mr Samer Mohammad";
-      var phoneNumber1 = "+97150509992";
-      var phoneNumber2 = "+97148328892";
-      var whatsappNumber = "+97148328892";
-      var email = "info@luxmetallic.com";
-      var instagram = "https://www.instagram.com/luxmetallic/";
-      var companyName = "Luxmetallic";
-      var websiteUrl = "https://www.luxmetallic.com";
+      var name = "Karim Haddad";
+      var phoneNumber1 = "+971563048033";
+      var whatsappNumber = "+971563048033";
+      var email = "karim.luxury@outlook.com";
+      var instagram = "https://www.instagram.com/karim.luxury/#";
+
 
       var vCard = `BEGIN:VCARD
       VERSION:3.0
       N:${name};;;;
       ORG:${companyName}
       TEL;TYPE=CELL:${phoneNumber1}
-      TEL;TYPE=CELL:${phoneNumber2}
       TEL;TYPE=WHATSAPP:${whatsappNumber}
       EMAIL:${email}
       X-SOCIALPROFILE;TYPE=INSTAGRAM:${instagram}
-      URL:${websiteUrl}
       END:VCARD`;
 
       var dataUrl = "data:text/vcard;charset=utf-8," + encodeURIComponent(vCard);
