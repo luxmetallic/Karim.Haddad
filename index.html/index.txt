@@ -4,7 +4,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Visual Business Card</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css">
   <style>
     body {
       background-color: #f2f2f2; /* Dark background color */
@@ -37,27 +36,29 @@
       border-radius: 20px; /* Make sure to match the container's border-radius */
     }
 
-    h1 {
-      font-size: 32px;
-      font-family: "Soria", sans-serif;
-      color: #fff;
-      text-align: right;
-    }
-
-
     .pic-container {
       background-color: #000;
-      max-width: 465px;
+      max-width: 465px; /* Adjust the max-width to your preferred value */
       border-radius: 20px;
       display: flex;
-      justify-content: center;
       align-items: center;
       margin: 20px auto;
     }
 
-    .pic a {
-      text-align: left;
+    .pic {
+      flex: 1; /* Take up available space */
+      padding: 20px; /* Add some padding around the profile picture */
+      text-align: left; /* Align the profile picture to the left */
     }
+
+    h1 {
+      flex: 1; /* Take up available space */
+      font-size: 32px;
+      font-family: "Soria", sans-serif;
+      color: #fff;
+      text-align: left;
+
+}
 
     .icon {
       font-size: 30px;
@@ -112,26 +113,39 @@
       }
 
       .social-icons-container a {
-        margin: 10px; /* Adjust spacing between icons for mobile screens */
+        margin: 5px; /* Adjust spacing between icons for mobile screens */
       }
 
       .save-contact {
         text-align: right; /* Center the button text */
         margin: 20px auto; /* Center the button horizontally */
       }
+      .icon {
+       max-width: 15%;
+      }
+
+      .pic {
+       max-width: 50%; /* Adjust max-width for mobile screens */
+       margin: 5px auto;
+      }
+
+      .h1 {
+       font-size: 16px;
+       }
     }
   </style>
 
   <script>
-    function saveContact() {
-      // Get the contact information
-      var name = "Karim Haddad";
-      var phoneNumber1 = "+971-563048033";
-      var whatsappNumber = "+971-563048033";
-      var email = "karim.luxury@outlook.com";
-      var instagram = "https://www.instagram.com/karim.luxury/#";
 
-      var vCard = `BEGIN:VCARD
+function saveContact() {
+  // Get the contact information
+  var name = "Karim Haddad";
+  var phoneNumber1 = "+971-563048033";
+  var whatsappNumber = "+971-563048033";
+  var email = "karim.luxury@outlook.com";
+  var instagram = "https://www.instagram.com/karim.luxury/#";
+
+  var vCard = `BEGIN:VCARD
       VERSION:3.0
       N:${name};;;;
       TEL;TYPE=CELL:${phoneNumber1}
@@ -140,11 +154,13 @@
       X-SOCIALPROFILE;TYPE=INSTAGRAM:${instagram}
       END:VCARD`;
 
-      var dataUrl = "data:text/vcard;charset=utf-8," + encodeURIComponent(vCard);
+    var dataUrl = "data:text/vcard;charset=utf-8," + encodeURIComponent(vCard);
 
-      window.open(dataUrl);
-    }
+    window.open(dataUrl);
+  }
+
   </script>
+
 </head>
 <body>
 <div class="container">
@@ -160,10 +176,11 @@
     <a href="mailto:karim.luxury@outlook.com"><img src="mail.png" alt="Email"></a>
   </div>
 
-  <div class="save-contact">
-    <a href="#" onclick="saveContact()">
-      <img src="D.png" alt="Save Contact">
-    </a>
+ <div class="save-contact">
+  <a href="#" onclick="saveContact()">
+    <img src="D.png" alt="Save Contact" style="vertical-align: middle; margin-right: 10px;">
+  </a>
+
   </div>
 </div>
 </body>
