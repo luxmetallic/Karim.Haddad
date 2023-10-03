@@ -135,31 +135,34 @@
     }
   </style>
 
-  <script>
+<script>
+  function saveContact() {
+    // Get the contact information
+    var name = "Karim Haddad";
+    var phoneNumber1 = "+971563048033";
+    var whatsappNumber = "+971563048033";
+    var email = "karim.luxury@outlook.com";
+    var instagram = "https://www.instagram.com/karim.luxury/";
+    var companyName = "";
+    var websiteUrl = "";
 
-function saveContact() {
-  // Get the contact information
-  var name = "Karim Haddad";
-  var phoneNumber1 = "+971-563048033";
-  var whatsappNumber = "+971-563048033";
-  var email = "karim.luxury@outlook.com";
-  var instagram = "https://www.instagram.com/karim.luxury/#";
 
-  var vCard = `BEGIN:VCARD
-      VERSION:3.0
-      N:${name};;;;
-      TEL;TYPE=CELL:${phoneNumber1}
-      TEL;TYPE=WHATSAPP:${whatsappNumber}
-      EMAIL:${email}
-      X-SOCIALPROFILE;TYPE=INSTAGRAM:${instagram}
-      END:VCARD`;
+    var vCard = `BEGIN:VCARD
+VERSION:3.0
+N:${name};;;;
+ORG:${companyName}
+TEL;TYPE=CELL:${phoneNumber1}
+TEL;TYPE=WHATSAPP:${whatsappNumber}
+EMAIL:${email}
+X-SOCIALPROFILE;TYPE=INSTAGRAM:${instagram}
+URL:${websiteUrl}
+END:VCARD`;
 
     var dataUrl = "data:text/vcard;charset=utf-8," + encodeURIComponent(vCard);
 
     window.open(dataUrl);
   }
-
-  </script>
+</script>
 
 </head>
 <body>
