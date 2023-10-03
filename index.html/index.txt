@@ -4,23 +4,24 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Visual Business Card</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <style>
     body {
       background-color: #f2f2f2; /* Dark background color */
       font-family: Arial, sans-serif;
       color: #fff; /* Text color */
+      margin: 0; /* Remove default margin */
     }
 
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-      background-image: url(' car.jpg '); /* Replace 'karim.png' with your actual image file path */
+      background-color: #f2f2f2;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       border-radius: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       text-align: center;
       position: relative;
     }
@@ -36,65 +37,103 @@
       border-radius: 20px; /* Make sure to match the container's border-radius */
     }
 
-    h1, h2, p {
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
-    }
-
     h1 {
-      font-size: 36px;
-      font-family: "Soria Soria",Soria Soria;
+      font-size: 32px;
+      font-family: "Soria", sans-serif;
       color: #fff;
-      margin: 0;
+      text-align: right;
     }
 
-    h2 {
-      font-size: 24px;
-      font-family: "Soria Soria",Soria Soria;
-      color: #fff;
-      margin: 10px 0;
+
+    .pic-container {
+      background-color: #000;
+      max-width: 465px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
     }
 
+    .pic a {
+      text-align: left;
+    }
 
     .icon {
       font-size: 30px;
       color: #0077b5;
+    }
+
+    /* Create a container for social icons */
+    .social-icons-container {
+      background-color: #000;
+      max-width: 465px;
+      border-radius: 20px; /* Apply border-radius to the container */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto; /* Center the container horizontally */
+    }
+
+    .social-icons-container a {
+      margin-right: 20px; /* Adjust spacing between icons */
+    }
+
+    /* Move the button to the left side */
+    .save-contact {
+      text-align: right; /* Center the button text */
+      margin-right: 165px;
+      margin-top: 20px; /* Adjust the top margin */
+    }
+
+    .save-contact a {
+      text-decoration: none; /* Remove underlines from the link */
+    }
+
+    .save-contact img {
+      vertical-align: middle;
       margin-right: 10px;
     }
 
-    .social-icons {
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      display: inline-block;
-      margin-right: 10px;
-    }
-
-    .social-icons a i {
-      transition: all 0.3s ease-in-out;
-    }
-
-    .social-icons a:hover i {
+    .save-contact:hover img {
       transform: scale(1.2);
       color: #0077b5;
     }
 
+    /* Media query for mobile screens */
+    @media (max-width: 480px) {
+      .container {
+        padding: 10px; /* Reduce padding for smaller screens */
+      }
+
+      .social-icons-container {
+        max-width: 100%; /* Adjust max-width for mobile screens */
+        flex-wrap: wrap; /* Allow icons to wrap to the next line */
+      }
+
+      .social-icons-container a {
+        margin: 10px; /* Adjust spacing between icons for mobile screens */
+      }
+
+      .save-contact {
+        text-align: right; /* Center the button text */
+        margin: 20px auto; /* Center the button horizontally */
+      }
+    }
   </style>
 
   <script>
     function saveContact() {
       // Get the contact information
       var name = "Karim Haddad";
-      var phoneNumber1 = "+971563048033";
-      var whatsappNumber = "+971563048033";
+      var phoneNumber1 = "+971-563048033";
+      var whatsappNumber = "+971-563048033";
       var email = "karim.luxury@outlook.com";
       var instagram = "https://www.instagram.com/karim.luxury/#";
-
 
       var vCard = `BEGIN:VCARD
       VERSION:3.0
       N:${name};;;;
-      ORG:${companyName}
       TEL;TYPE=CELL:${phoneNumber1}
       TEL;TYPE=WHATSAPP:${whatsappNumber}
       EMAIL:${email}
@@ -109,24 +148,23 @@
 </head>
 <body>
 <div class="container">
-  <img src="karim.png">
-  <h1>Karim Haddad</h1>
-  <h2>Luxury Gars</h2>
+  <div class="pic-container">
+    <div class="pic"><img src="karim2.png" alt="Profile Picture"></div>
+    <h1>Karim Haddad</h1>
+  </div>
 
-  <div class="social-icons">
-    <a href="https://wa.link/y6yskx"><img src="whatsapp.png" style="height: 64px;"></a>
-    <a href="https://www.instagram.com/karim.luxury/#"><img src="instagram.png" style="height: 64px;"></a>
-    <a href="https://www.facebook.com/karim.haddad.18/"><img src="facebook.png" style="width: 64px;"></a>
-    <a href="https://www.youtube.com/c/KARIMLUXURY?app=desktop"><img src="youtube.png" style="width: 64px;"></a>
-    <a href="mailto:karim.luxury@outlook.com"><img src="mail.png" style="width: 64px;"></a>
+  <div class="social-icons-container">
+    <a href="https://wa.link/y6yskx"><img src="whatsapp.png" alt="WhatsApp"></a>
+    <a href="https://www.instagram.com/karim.luxury/#"><img src="instagram.png" alt="Instagram"></a>
+    <a href="https://www.youtube.com/c/KARIMLUXURY?app=desktop"><img src="youtube.png" alt="YouTube"></a>
+    <a href="mailto:karim.luxury@outlook.com"><img src="mail.png" alt="Email"></a>
   </div>
 
   <div class="save-contact">
     <a href="#" onclick="saveContact()">
-      <img src="D.png" alt="Save Contact" style="vertical-align: middle; margin-right: 10px; margin: 20px;">
+      <img src="D.png" alt="Save Contact">
     </a>
   </div>
-
 </div>
 </body>
 </html>
